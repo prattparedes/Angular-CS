@@ -7,12 +7,14 @@ import { FESComponent } from './fes/fes.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContadorSliderComponent } from './contador-slider/contador-slider.component';
+import { ProductosComponent } from './productos/productos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FESComponent,
-    ContadorSliderComponent
+    ContadorSliderComponent,
+    ProductosComponent,
   ],
   imports: [
     BrowserModule,

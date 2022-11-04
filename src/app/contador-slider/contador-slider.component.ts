@@ -10,14 +10,14 @@ export class ContadorSliderComponent implements OnInit, DoCheck, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('OnInit ejecutado')
+    // console.log('OnInit ejecutado')
   }
 
   ngDoCheck(): void {
-    console.log('DocheckEjecutado')
+    // console.log('DocheckEjecutado')
   }
 
   ngOnDestroy(): void {
-    console.log('onDestroy ejecutado')
+    // console.log('onDestroy ejecutado')
   }
 }

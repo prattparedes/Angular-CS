@@ -1,5 +1,10 @@
-<fes></fes><br>
-<button *ngIf="!mostrar_slider" (click)="ocultarSlider(true)" style="margin-top: 10px;">Mostrar</button>
-<button *ngIf="mostrar_slider" (click)="ocultarSlider(false)" style="margin-top: 10px;">Ocultar</button>
-<app-contador-slider *ngIf="mostrar_slider"></app-contador-slider>
-<mat-slider *ngIf="mostrar_slider" min="1" max="100" step="1" value="50" (input)="onInputChange($event)"></mat-slider>
+<div [ngStyle]="{ 'background': config.fondo, 'padding': '20px', 'border': '5px solid green', 'border-color': config.color}">
+    {{title}}
+    {{description}}
+    <fes></fes><br>
+    <button *ngIf="!mostrar_slider" (click)="ocultarSlider(true)" style="margin-top: 10px;">Mostrar</button>
+    <button *ngIf="mostrar_slider" (click)="ocultarSlider(false)" style="margin-top: 10px;">Ocultar</button>
+    <app-contador-slider *ngIf="mostrar_slider"></app-contador-slider>
+    <mat-slider *ngIf="mostrar_slider" min="1" max="100" step="1" value="50" (input)="onInputChange($event)"></mat-slider>
+    <app-productos></app-productos>
+</div>
