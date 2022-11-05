@@ -11,6 +11,11 @@ import { ProductosComponent } from './productos/productos.component';
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { CursosComponent } from './cursos/cursos.component';
+import { HomeComponent } from './home/home.component';
+import { ExternoComponent } from './externo/externo.component';
+
+import { HttpClientModule } from  '@angular/common/http';
+import { CalculadoraPipe } from './pipes/calculadora.pipe';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,17 @@ import { CursosComponent } from './cursos/cursos.component';
     ProductosComponent,
     AboutComponent,
     CursosComponent,
+    HomeComponent,
+    ExternoComponent,
+    CalculadoraPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatSliderModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

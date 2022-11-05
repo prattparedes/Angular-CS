@@ -1,0 +1,21 @@
+<hr>
+{{fecha | date:'fullDate' | uppercase }} <br>
+{{fecha | date:'dd/MM/yy'}} <br>
+{{ 'GOOD MORNING EVERYONE' | lowercase}} <br>
+{{ 4 | calculadora: 2}}
+<hr>
+
+<div *ngIf="!user">
+    Cargando...
+</div>
+
+<div *ngIf="user">
+    <!-- <h2>{{user.data.first_name}}</h2> -->
+    <h1>Buscar usuario: </h1> 
+    <input type="text" [(ngModel)]="userId" (keyup.enter)="cargaUsuario(userId)"> 
+    <p>El usuario que buscas es: {{userId}}</p>
+    <br>
+    <img src={{user.avatar}} alt=""> <br>
+    {{user.first_name}}
+    {{user.last_name}}
+</div>

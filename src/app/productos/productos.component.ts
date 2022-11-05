@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from '../models/producto';
+import { ProductoService } from '../services/producto.service';
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css'],
+  providers: [ProductoService]
 })
 export class ProductosComponent implements OnInit {
   public titulo: string = 'Productos Disponibles';
@@ -13,32 +15,20 @@ export class ProductosComponent implements OnInit {
   public color: string;
   public mi_marca: string;
 
-  constructor() {
+  constructor(
+    private _productoService: ProductoService
+  ) {
     this.color = 'orange';
     this.mi_marca = 'Troya';
-    this.productos = [
-      new Producto('Pantalon Trekking', 'CAT', 'verde oscuro', 45, true),
-      new Producto('Zapato acero', 'ADIDAS', 'rojo fuego', 95, false),
-      new Producto(
-        'Mochila montañera 120L',
-        'Peruvian',
-        'azul marino',
-        120,
-        true
-      ),
-      new Producto('Casco de Geologo', 'Johnny', 'Blanco', 80, true),
-      new Producto('Chaleco multifunción de campo', 'CAT', 'Blanco', 65, false),
-      new Producto('Baston montañista', 'ADIDAS', 'Blanco', 40, true),
-      new Producto('Brujula Brunton', 'Peruvian', 'Blanco', 110, false),
-      new Producto('Brujula Brunton', 'Peruvian', 'Blanco', 125, true),
-    ];
     this.marcas = new Array();
+    this.productos = new Array();
   }
 
   ngOnInit(): void {
     console.log(this.productos);
-
+    this.productos = this._productoService.getProductos()
     this.getMarcas();
+    console.log(this._productoService.getTexto())
   }
 
   getMarcas() {
