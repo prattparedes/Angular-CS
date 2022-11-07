@@ -19,3 +19,32 @@
     {{user.first_name}}
     {{user.last_name}}
 </div>
+
+<hr>
+<h2>Crear Usuario</h2>
+
+<form #newUser="ngForm" (ngSubmit)="onSubmit(newUser)">
+    <p>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="new_user.name" required>
+        <span *ngIf="name.touched && !name.valid"> El nombre no es válido</span>
+    </p>
+
+    <p>
+        <label for="job">Trabajo</label>
+        <input type="text" name="job" #job="ngModel" [(ngModel)]="new_user.job" required>
+        <span *ngIf="job.touched && !job.valid"> El trabajo no es válido</span>
+    </p>
+
+    <button type="submit" onsubmit="" [disabled]="!newUser.form.valid">Enviar</button>
+</form>
+
+<div *ngIf="usuario_guardado">
+    <h2>El usuario se ha guardado correctamente</h2>
+    <h3>
+        {{usuario_guardado.name}}
+        {{usuario_guardado.job}}
+    </h3>
+    <p>{{usuario_guardado.id}}</p>
+    <p>El usuario fue creado el: {{usuario_guardado.createdAt}}</p>
+</div>
